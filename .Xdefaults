@@ -1,0 +1,19 @@
+!urxvt configuration
+URxvt.termName:		rxvt
+URxvt.transparent:	true
+URxvt.shading:		30
+URxvt.inheritPixmap:	false
+URxvt.imLocale:		en_US.UTF-8
+URxvt.scrollBar:	false
+URxvt.saveLines:	500
+URxvt.urlLauncher:	firefox
+URxvt.cursorBlink:	true
+URxvt.geometry:		80x24
+URxvt.fading:		25%
+URxvt.font:		xft:Monaco Nerd Font Mono:pixelsize=18
+URxvt.boldFont:		xft:Monaco Nerd Font Mono:bold:pixelsize=18
+URxvt.depth:		32
+URxvt.background:	rgba:0000/0000/0000/d3d3
+URxvt.foreground:	grey80
+URxvt.tintColor:	#242424
+URxvt.blurRadius:	5

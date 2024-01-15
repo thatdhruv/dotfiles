@@ -24,9 +24,12 @@ function prompt() {
 PROMPT_COMMAND=prompt
  
 ### start of user-defined aliases ###
-alias pins="sudo pacman -S --noconfirm --needed " #i
-alias ll="ls -al " #l
-#alias r="ranger "
-alias prem="sudo pacman -R --noconfirm " #u
-#alias v="nvim "
+alias c="cp -r "
+alias d="rm -rf "
+alias g="git clone "
+alias i="sudo pacman -S --noconfirm --needed "
+alias l="eza -al --icons "
+alias r="ranger "
+alias u="sudo pacman -R --noconfirm "
+alias v="nvim "
 ### end of user-defined aliases ###

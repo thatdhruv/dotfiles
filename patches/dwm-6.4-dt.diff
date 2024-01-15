@@ -1,0 +1,63 @@
+--- config.def.h	2024-01-16 00:11:25.806649981 +0530
++++ dwm.h	2024-01-16 00:10:05.203318649 +0530
+@@ -5,17 +5,17 @@
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+-static const char *fonts[]          = { "monospace:size=10" };
+-static const char dmenufont[]       = "monospace:size=10";
+-static const char col_gray1[]       = "#222222";
+-static const char col_gray2[]       = "#444444";
+-static const char col_gray3[]       = "#bbbbbb";
+-static const char col_gray4[]       = "#eeeeee";
+-static const char col_cyan[]        = "#005577";
++static const char *fonts[]          = { "Fira Code:pixelsize=18:antialias=true:autohint=true" };
++static const char dmenufont[]       = "Fira Code:pixelsize=18:antialias=true:autohint=true";
++static const char col_gray1[]       = "#282828";
++static const char col_gray2[]       = "#504945";
++static const char col_gray3[]       = "#bdae93";
++static const char col_gray4[]       = "#ebdbb2";
++static const char col_selection[]   = "#cc241d";
+ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++	[SchemeSel]  = { col_gray4, col_selection,  col_selection  },
+ };
+ 
+ /* tagging */
+@@ -57,9 +57,15 @@
+ 
+ /* commands */
+ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
++static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_selection, "-sf", col_gray4, NULL };
+ static const char *termcmd[]  = { "st", NULL };
+ 
++/*** start of user-defined commands ***/
++static const char *firefoxcmd[] = { "firefox", NULL };
++static const char *mutecmd[] = { "pamixer", "-t", NULL };
++static const char *poweroffcmd[] = { "poweroff", NULL };
++/*** end of user-defined commands ***/
++
+ static const Key keys[] = {
+ 	/* modifier                     key        function        argument */
+ 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+@@ -95,6 +101,17 @@
+ 	TAGKEYS(                        XK_8,                      7)
+ 	TAGKEYS(                        XK_9,                      8)
+ 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
++
++	/*** start of user-defined bindings ***/
++	{ MODKEY,                       XK_w,      spawn,          {.v = firefoxcmd } },
++	{ MODKEY,                       XK_s,      spawn,          SHCMD("${HOME}/.scripts/screenshot.sh") },
++	{ MODKEY,                       XK_m,      spawn,          {.v = mutecmd } },
++	{ MODKEY,                       XK_v,      spawn,          SHCMD("${HOME}/.scripts/increase_volume.sh") },
++	{ MODKEY|ControlMask,           XK_q,      spawn,          SHCMD("${HOME}/.scripts/logout.sh") },
++	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("${HOME}/.scripts/set_wallpaper.sh") },
++	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("${HOME}/.scripts/decrease_volume.sh") },
++	{ MODKEY|ShiftMask|ControlMask, XK_q,      spawn,          {.v = poweroffcmd } },
++	/*** end of user-defined bindings ***/
+ };
+ 
+ /* button definitions */

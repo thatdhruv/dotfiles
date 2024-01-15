@@ -29,7 +29,6 @@ alias d="rm -rf "
 alias g="git clone "
 alias i="sudo pacman -S --noconfirm --needed "
 alias l="eza -al --icons "
-alias r="ranger "
 alias u="sudo pacman -R --noconfirm "
 alias v="nvim "
 ### end of user-defined aliases ###

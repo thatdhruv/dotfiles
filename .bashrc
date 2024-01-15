@@ -13,7 +13,7 @@ function promptRight() {
 }
  
 function promptLeft() {
-    echo -e "┌\e[0;31m$(tty) \e[0;32m\u@\h \e[0;34m\w\e[m\n└─────┤ "
+    echo -e "┌\e[0;31m$(tty) \e[0;32m\u@\h \e[0;34m\w\e[m\n└─┤ "
 }
  
 function prompt() {

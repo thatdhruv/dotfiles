@@ -2,7 +2,7 @@
 
 xrdb -merge ~/.Xresources
 xcompmgr -fF -I-.002 -O-.003 -D1 &
-sh ${HOME}/.scripts/set_wallpaper.sh
+feh --bg-scale .wallpaper.jpg
 slstatus &
 dunst &
 
